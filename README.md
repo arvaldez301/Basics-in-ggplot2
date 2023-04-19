@@ -16,11 +16,10 @@ Execute the following command to create your first plot
 ggplot(mrcars, aes(cyl, mpg))+
   geom_point()
 ```
-#Changing cyl to factor will change how the graph is display. Doing this will only present values that are present within the dataset.
+Changing cyl to factor will change how the graph is display. Doing this will only present values that are present within the dataset.
 ```factor(cyl)```
-### Mappint data columns to aesthetics
-
-#Edit to add a color aesthetic mapped to disp
+### Mapping data columns to aesthetics
+Edit to add a color aesthetic mapped to disp
 ```
 ggplot(mtcars, aes(wt, mpg, color = disp)) +
   geom_point()
@@ -39,7 +38,7 @@ ggplot(diamonds, aes(carat, price)) +
 ```
 The ```geom_point()``` command will create a scatterplot. You can also add ```geom_smooth()``` to add a smooth trend line. Give it a shot by adding it to the plot that you just created.
 
-###Changing one geom or every geom
+### Changing one geom or every geom
 Map the color aesthetic to clarity
 ```
 ggplot(diamonds, aes(carat, price, color = clarity)) +
