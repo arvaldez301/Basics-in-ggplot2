@@ -31,7 +31,7 @@ Explore the diamonds data frame with str()
 ```
 str(diamonds)
 ```
-Add geom_point() with +. To add another line to a ggplot command a ```+``` has to go immediatly after the previous line is written, indicating that the command (or plot) is not done being created.
+Add ```geom_point()``` with ```+```. To add another line to a ggplot command a ```+``` has to go immediatly after the previous line is written, indicating that the command (or plot) is not done being created.
 ```
 ggplot(diamonds, aes(carat, price)) +
   geom_point()
@@ -52,3 +52,10 @@ ggplot(diamonds, aes(carat, price, color = clarity)) +
   geom_smooth()
 ```
 This has change the opacity of the points by 40%.
+
+### Saving plots as vairables
+When creating plots you are able to sae them as variables. By doing this, you can later on call the plot that you already made and add on additional characteristics later on. to do this, name you plot and follow it by a ```<-``` and the remaining code to create the plot.
+
+## Aesthetics
+
+### All about aesthetics: color, shape, and size
