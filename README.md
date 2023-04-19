@@ -38,7 +38,7 @@ ggplot(diamonds, aes(carat, price)) +
 ```
 The ```geom_point()``` command will create a scatterplot. You can also add ```geom_smooth()``` to add a smooth trend line. Give it a shot by adding it to the plot that you just created.
 
-### Changing one geom or every geom
+#### Changing one geom or every geom
 Map the color aesthetic to clarity
 ```
 ggplot(diamonds, aes(carat, price, color = clarity)) +
@@ -53,14 +53,16 @@ ggplot(diamonds, aes(carat, price, color = clarity)) +
 ```
 This has change the opacity of the points by 40%.
 
-### Saving plots as vairables
+#### Saving plots as vairables
 When creating plots you are able to sae them as variables. By doing this, you can later on call the plot that you already made and add on additional characteristics later on. to do this, name you plot and follow it by a ```<-``` and the remaining code to create the plot.
 
 ## Aesthetics
 
-### All about aesthetics: color, shape, and size
+### Visible Aesthetics
+
+#### All about aesthetics: color, shape, and size
 These are the aesthetics you can consider within aes() in this chapter: ```x```, ```y```, ```color```, ```fill```, ```size```, ```alpha```, ```labels``` and ```shape```.
-### All about aesthetics: color vs. fill
+#### All about aesthetics: color vs. fill
 The ```color``` aesthetic changes the outline of a geom and the ```fill``` aesthetic changes the inside. ```geom_point()``` is an exception: you use ```color``` (not ```fill```) for the point color. However, some shapes have special behavior.
 The default ```geom_point()``` uses ```shape = 19``` which is a solid circle. An alternative shape ```shape = 21```. This is a circle that allows you to use both ```fill``` for the inside and ```color``` for the outline. 
 You can call ```?points()``` for a break down on the types of points.
@@ -68,8 +70,23 @@ You can call ```?points()``` for a break down on the types of points.
 ggplot(mtcars, aes(wt, mpg, fill = fcyl)) +
   geom_point(shape = 1, size = 4)
 ```
-### All about attributes: color, shape, size, and alpha
+### Using attributes
+#### All about attributes: color, shape, size, and alpha
 You can specify colors in R using hex codes: a hash followed by two hexadecimal numbers each for red, green, and blue (```"#RRGGBB"```). Hexadecimal is base-16 counting. You have 0 to 9, and A representing 10 up to F representing 15. Pairs of hexadecimal numbers give you a range from 0 to 255. ```"#000000"``` is "black" (no color), ```"#FFFFFF"``` means "white", and ```"#00FFFF"``` is cyan (mixed green and blue).
+### Modifying aesthetics
+#### Updating aesthetic labels
+There are two functions that can improve the look of your figure labels
+```labs()``` will set the x- and y- axis labels and will take strings for each argument. ```scale_fill_manual()``` defines propers of the color scale (ie. axis). The first argument sets the legend title.
 
-### Updating aesthetic labels
+```
+palette <- c(automatic = "#377EB8", manual = "#E41A1C")
 
+# Set the position
+ggplot(mtcars, aes(fcyl, fill = fam)) +
+  geom_bar(position = "dodge") +
+  labs(x = "Number of Cylinders", y = "Count")
+  scale_fill_manual("Transmission", values = palette)
+  ```
+## Geometrics
+
+###Scatter Plots
