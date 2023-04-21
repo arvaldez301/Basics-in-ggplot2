@@ -89,4 +89,23 @@ ggplot(mtcars, aes(fcyl, fill = fam)) +
   ```
 ## Geometrics
 
-###Scatter Plots
+### Scatter Plots
+
+#### Overplotting 1: Large Datasets
+Scatter plots can be created using 
+```
+# Plot price vs. carat, colored by clarity
+plt_price_vs_carat_by_clarity <- ggplot(diamonds, aes(carat, price, color = clarity))
+
+# Add a point layer with tiny points
+plt_price_vs_carat_by_clarity + geom_point(alpha = 0.5, shape = ".")
+```
+#### Overplotting 2: Aligned Values
+This is how to align values on a single axis. This occurs when one axis is continuous and the other is categorical, which can be overcome with some form of jittering 
+```
+# Plot base
+plt_mpg_vs_fcyl_by_fam <- ggplot(mtcars, aes(fcyl, mpg, color = fam))
+
+# Default points are shown for comparison
+plt_mpg_vs_fcyl_by_fam + geom_point()
+```
