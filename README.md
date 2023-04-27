@@ -489,7 +489,7 @@ y_end <- 7.5
 Our previous plot has been assigned to plt_country_vs_lifeExp```
 
 ```
-# Define the theme
+#Define the theme
 plt_country_vs_lifeExp +
   theme_classic() +
   theme(axis.line.y = element_blank(),
@@ -498,12 +498,12 @@ plt_country_vs_lifeExp +
         axis.title = element_blank(),
         legend.position = "none")
         
-# Add a vertical line
+#Add a vertical line
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3)
 
-# Add text
+#Add text
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3) +
