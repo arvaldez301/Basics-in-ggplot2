@@ -305,6 +305,7 @@ Here, the new value can be
 "none": don't draw it.
 c(x, y): c(0, 0) means the bottom-left and c(1, 1) means the top-right.
 Let's revisit the recession period line plot (assigned to plt_prop_unemployed_over_time).
+
 ```
 # View the default plot
 plt_prop_unemployed_over_time
@@ -321,6 +322,7 @@ plt_prop_unemployed_over_time +
 plt_prop_unemployed_over_time +
   theme(legend.position = c(0.6,0.1))
 ```
+
 #### Modifying theme elements
 Many plot elements have multiple properties that can be set. For example, line elements in the plot such as axes and gridlines have a color, a thickness (size), and a line type (solid line, dashed, or dotted). To set the style of a line, you use element_line(). For example, to make the axis lines into red, dashed lines, you would use the following.
 
@@ -347,6 +349,7 @@ plt_prop_unemployed_over_time +
     )
   )
 ```
+
 #### Modifying whitespace
 Whitespace means all the non-visible margins and spacing in the plot.
 
@@ -357,6 +360,7 @@ Borders require you to set 4 positions, so use margin(top, right, bottom, left, 
 The default unit is "pt" (points), which scales well with text. Other options include "cm", "in" (inches) and "lines" (of text).
 
 plt_mpg_vs_wt_by_cyl is available. The panel and legend are wrapped in blue boxes so you can see how they change.
+
 ```
 # View the original plot
 plt_mpg_vs_wt_by_cyl
@@ -376,6 +380,7 @@ plt_mpg_vs_wt_by_cyl +
     plot.margin =unit(margin(10,30,50,70,"mm")
   ))
 ```
+
 ### Theme Flexibility
 #### Built-in Themes
 In addition to making your own themes, there are several out-of-the-box solutions that may save you lots of time.
@@ -399,6 +404,7 @@ plt_prop_unemployed_over_time +
 plt_prop_unemployed_over_time +
   theme_void()
 ```
+
 #### Exploring ggthemes
 Outside of ggplot2, another source of built-in themes is the ggthemes package. The workspace already contains the plt_prop_unemployed_over_time, the line plot from before. Let's explore some of the ready-made ggthemes themes.
 
@@ -417,6 +423,7 @@ plt_prop_unemployed_over_time +
 plt_prop_unemployed_over_time +
   theme_wsj()
 ```
+
 #### Setting themes
 Reusing a theme across many plots helps to provide a consistent style. You have several options for this.
 
@@ -425,6 +432,7 @@ Set your theme as the default using theme_set().
 A good strategy that you'll use here is to begin with a built-in theme then modify it.
 
 plt_prop_unemployed_over_time is available. The theme you made earlier is shown in the sample code.
+
 ```
 theme_recession <- theme(
   rect = element_rect(fill = "grey92"),
@@ -438,12 +446,13 @@ theme_recession <- theme(
 )
 theme_tufte_recession <- theme_tufte() + theme_recession
 
-# Set theme_tufte_recession as the default theme
+#Set theme_tufte_recession as the default theme
 theme_set(theme_tufte_recession)
 
-# Draw the plot (without explicitly adding a theme)
+#Draw the plot (without explicitly adding a theme)
 plt_prop_unemployed_over_time
 ```
+
 #### Publication-quality plots
 ```
 plt_prop_unemployed_over_time +
@@ -466,10 +475,10 @@ This type of plot will be in an info-viz style, meaning that it would be similar
 A scatterplot of lifeExp by country, colored by lifeExp, with points of size 4, is provided.
 
 ```
-# Set the color scale
+#Set the color scale
 palette <- brewer.pal(5, "RdYlBu")[-(2:4)]
 
-# Modify the scales
+#Modify the scales
 ggplot(gm2007, aes(x = lifeExp, y = country, color = lifeExp)) +
   geom_point(size = 4) +
   geom_segment(aes(xend = 30, yend = country), size = 2) +
@@ -482,15 +491,17 @@ In the previous exercise, we completed our basic plot. Now let's polish it by pl
 
 The following values have been calculated for you to assist with adding embellishments to the plot:
 
-```global_mean <- mean(gm2007_full$lifeExp)
+```
+global_mean <- mean(gm2007_full$lifeExp)
 x_start <- global_mean + 4
 y_start <- 5.5
 x_end <- global_mean
 y_end <- 7.5
-Our previous plot has been assigned to plt_country_vs_lifeExp```
+Our previous plot has been assigned to plt_country_vs_lifeExp
+```
 
 ```
-# Define the theme
+#Define the theme
 plt_country_vs_lifeExp +
   theme_classic() +
   theme(axis.line.y = element_blank(),
@@ -499,12 +510,12 @@ plt_country_vs_lifeExp +
         axis.title = element_blank(),
         legend.position = "none")
         
-# Add a vertical line
+#Add a vertical line
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3)
 
-# Add text
+#Add text
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3) +
