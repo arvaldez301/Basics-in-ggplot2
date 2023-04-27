@@ -81,7 +81,7 @@ There are two functions that can improve the look of your figure labels
 ```
 palette <- c(automatic = "#377EB8", manual = "#E41A1C")
 
-# Set the position
+#Set the position
 ggplot(mtcars, aes(fcyl, fill = fam)) +
   geom_bar(position = "dodge") +
   labs(x = "Number of Cylinders", y = "Count")
@@ -140,22 +140,23 @@ You'll typically have a small, defined number of intersections between two varia
 
 The ```Vocab``` dataset provided contains the years of education and vocabulary test scores from respondents to US General Social Surveys from 1972-2004.
 ````
-# Examine the structure of Vocab
+#Examine the structure of Vocab
 str(Vocab)
 
-# Plot vocabulary vs. education
+#Plot vocabulary vs. education
 ggplot(Vocab, aes(education, vocabulary)) +
   # Add a point layer
   geom_point()
   
- # Change to a jitter layer
+ #Change to a jitter layer
   geom_jitter()
   
- # Set the transparency to 0.2
+ #Set the transparency to 0.2
   geom_jitter(alpha = 0.2)
 
-# Set the shape to 1
+#Set the shape to 1
   geom_jitter(alpha = 0.2, shape = 1)
+```
   
 ### Histograms
 
@@ -163,22 +164,22 @@ ggplot(Vocab, aes(education, vocabulary)) +
 Recall that histograms cut up a continuous variable into discrete bins and, by default, maps the internally calculated count variable (the number of observations in each bin) onto the y aesthetic. An internal variable called ```density``` can be accessed by using the ```..``` notation, i.e. ```..density...``` Plotting this variable will show the relative frequency, which is the height times the width of each bin.
 
 ```
-# Plot mpg
+#Plot mpg
 ggplot(mtcars, aes(x=mpg)) +
 
-  # Add a histogram layer
+  #Add a histogram layer
   geom_histogram()
   
-   # Set the binwidth to 1
+   #Set the binwidth to 1
   geom_histogram(binwidth = 1)
   
-  # Map y to ..density..
+  #Map y to ..density..
 ggplot(mtcars, aes(mpg, ..density..)) +
   geom_histogram(binwidth = 1)
   datacamp_light_blue <- "#51A8C9"
 
 ggplot(mtcars, aes(mpg, ..density..)) +
-  # Set the fill color to datacamp_light_blue
+  #Set the fill color to datacamp_light_blue
   geom_histogram(binwidth = 1, fill = datacamp_light_blue)
 ```
 #### Positions in histograms
@@ -192,17 +193,17 @@ Here, we'll examine the various ways of applying positions to histograms. ```geo
 
 ```identity```: Plot the values as they appear in the dataset.
 ```
-# Update the aesthetics so the fill color is by fam
+#Update the aesthetics so the fill color is by fam
 ggplot(mtcars, aes(mpg, fill = fam)) +
   geom_histogram(binwidth = 1)
   
-# Change the position to dodge
+#Change the position to dodge
   geom_histogram(binwidth = 1, position = "dodge")
   
-# Change the position to fill
+#Change the position to fill
   geom_histogram(binwidth = 1, position = "fill")
   
-# Change the position to identity, with transparency 0.4
+#Change the position to identity, with transparency 0.4
   geom_histogram(binwidth = 1, position = "identity", alpha = 0.4)
 ```
 ### Bar Plots
@@ -219,15 +220,15 @@ While we will be using ```geom_bar()``` here, note that the function ```geom_col
 
 In this exercise, you'll draw the total count of cars having a given number of cylinders (```fcyl```), according to manual or automatic transmission type (```fam```).
 ```
-# Plot fcyl, filled by fam
+#Plot fcyl, filled by fam
 ggplot(mtcars, aes(fcyl, fill=fam)) +
-  # Add a bar layer
+  #Add a bar layer
   geom_bar()
   
-  # Set the position to "fill"
+  #Set the position to "fill"
   geom_bar(position = "fill")
   
-  # Change the position to "dodge"
+  #Change the position to "dodge"
   geom_bar(position = "dodge")
 ````
 #### Overlapping bar plots
@@ -489,7 +490,7 @@ y_end <- 7.5
 Our previous plot has been assigned to plt_country_vs_lifeExp```
 
 ```
-#Define the theme
+# Define the theme
 plt_country_vs_lifeExp +
   theme_classic() +
   theme(axis.line.y = element_blank(),
@@ -498,12 +499,12 @@ plt_country_vs_lifeExp +
         axis.title = element_blank(),
         legend.position = "none")
         
-#Add a vertical line
+# Add a vertical line
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3)
 
-#Add text
+# Add text
 plt_country_vs_lifeExp +
   step_1_themes +
   geom_vline(xintercept = global_mean, color = "grey40", linetype = 3) +
