@@ -192,6 +192,7 @@ Here, we'll examine the various ways of applying positions to histograms. ```geo
 ```fill```: Bars for different groups are shown as proportions.
 
 ```identity```: Plot the values as they appear in the dataset.
+
 ```
 #Update the aesthetics so the fill color is by fam
 ggplot(mtcars, aes(mpg, fill = fam)) +
@@ -208,6 +209,7 @@ ggplot(mtcars, aes(mpg, fill = fam)) +
 ```
 ### Bar Plots
 #### Position in bar and col plots
+
 Let's see how the position argument changes ```geom_bar()```.
 
 We have three position options:
