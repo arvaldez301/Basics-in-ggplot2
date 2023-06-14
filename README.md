@@ -139,7 +139,7 @@ This can be type ```integer``` (i.e. 1 ,2, 3…) or categorical (i.e. class ```f
 You'll typically have a small, defined number of intersections between two variables, which is similar to case 3, but you may miss it if you don't realize that integer and factor data are the same as low precision data.
 
 The ```Vocab``` dataset provided contains the years of education and vocabulary test scores from respondents to US General Social Surveys from 1972-2004.
-````
+```
 #Examine the structure of Vocab
 str(Vocab)
 
