@@ -57,6 +57,10 @@ This has change the opacity of the points by 40%.
 When creating plots you are able to sae them as variables. By doing this, you can later on call the plot that you already made and add on additional characteristics later on. to do this, name you plot and follow it by a ```<-``` and the remaining code to create the plot.
 
 ## Aesthetics
+The following link will provide additional information on how to change the shape of points and a link to how to gather specific color codes:
+
+Point aesthetics: <https://r-charts.com/base-r/pch-symbols/#colors>
+Color Codes: <https://www.rapidtables.com/web/color/RGB_Color.html>
 
 ### Visible Aesthetics
 
